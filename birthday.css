@@ -406,6 +406,35 @@ body{
 .wish.is-in .wish__rule{ opacity:1; transform:translateY(0) scaleX(1); }
 .wish.is-in .wish__rule{ transition-delay:1.35s; }
 .wish.is-in .wish__sub{  transition-delay:1.55s; }
+/* New message & closing styling */
+.wish__message{
+  margin-top:.6em;
+}
+.wish__message-line{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-weight:500; font-size:clamp(11px, 2.4vw, 17px);
+  line-height:1.65; color:#5c3342;
+  text-shadow:0 1px 2px #fff8f1, 0 0 8px rgba(255,248,241,.95);
+  margin:0 0 .35em;
+  opacity:0; transform:translateY(12px); filter:blur(5px);
+  transition:opacity .8s ease, transform .9s var(--ease-out), filter .8s ease;
+}
+.wish.is-in .wish__message-line:nth-child(1){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:1.75s; }
+.wish.is-in .wish__message-line:nth-child(2){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:2.15s; }
+.wish.is-in .wish__message-line:nth-child(3){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:2.55s; }
+.wish__closing{
+  font-family:"Great Vibes", cursive; font-weight:400;
+  font-size:clamp(22px, 5vw, 42px);
+  margin-top:.6em;
+  background:linear-gradient(180deg, #e85a83 0%, #c41f52 50%, #9c0f42 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:
+    drop-shadow(0 1px 1px rgba(255,252,248,.98))
+    drop-shadow(0 2px 6px rgba(130,18,55,.45));
+  opacity:0; transform:translateY(12px); filter:blur(5px);
+  transition:opacity .8s ease, transform .9s var(--ease-out), filter .8s ease;
+}
+.wish.is-in .wish__closing{ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:3s; }
 .wish.is-in .wish__hero{
   animation:write 1.2s cubic-bezier(.62,.04,.24,1) .35s forwards,
             wishBreath 4s ease-in-out 1.9s infinite;
