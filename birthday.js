@@ -116,7 +116,7 @@ const T = {
   bloomSpan:  2.00,
   petalT0:    2.45,
   noteStart:  0.45,
-  done:       4.60,
+  done:       5.20,
 };
 
 const SS = 168;

@@ -331,8 +331,8 @@ body{
    ============================================================ */
 .wish{
   position:absolute;
-  left:5.5%; bottom:10%;
-  max-width:46%;
+  left:5.5%; bottom:7.5%;
+  max-width:44%;
   z-index:6;
   pointer-events:none;
   color:var(--ink);
@@ -342,17 +342,23 @@ body{
 }
 .wish.is-in{ visibility:visible; }
 .wish::before{
-  content:""; position:absolute; inset:-18% -24% -24% -16%;
-  background:radial-gradient(84% 98% at 34% 52%, rgba(255,250,243,.94), rgba(255,250,243,.6) 48%, rgba(255,250,243,0) 80%);
-  z-index:-1; opacity:0; transition:opacity 1s ease;
+  content:""; position:absolute; inset:-12% -20% -16% -14%;
+  background:radial-gradient(84% 98% at 34% 52%, rgba(255,250,243,.92), rgba(255,250,243,.55) 54%, rgba(255,250,243,0) 82%);
+  z-index:-1; opacity:0; transition:opacity 1.2s ease;
 }
 .wish.is-in::before{ opacity:1; }
 .wish__eyebrow{
   font-family:"Cormorant Garamond", Georgia, serif;
   font-style:italic; font-weight:600;
-  font-size:clamp(13px, 3.2vw, 24px);
+  font-size:clamp(13px, 2.8vw, 22px);
   letter-spacing:.05em; color:#9c4f63;
   text-shadow:0 1px 2px #fff8f1, 0 0 8px rgba(255,248,241,.95);
+  opacity:0; transform:translateY(12px); filter:blur(5px);
+  transition:opacity .9s ease, transform 1s var(--ease-out), filter .9s ease;
+}
+.wish.is-in .wish__eyebrow{
+  opacity:1; transform:translateY(0); filter:blur(0);
+  transition-delay:0.1s;
 }
 .wish__heroWrap{ position:relative; display:inline-block; }
 .wish__heroWrap::before{
@@ -369,8 +375,8 @@ body{
 }
 .wish__hero{
   font-family:"Great Vibes", cursive; font-weight:400;
-  font-size:clamp(40px, 9.6vw, 86px);
-  line-height:.98; margin:-.02em 0 .06em;
+  font-size:clamp(34px, 6.5vw, 68px);
+  line-height:1.02; margin:-.02em 0 .04em;
   /* one consistent rose, top-lit — every letter reads the same (no per-glyph
      colour shift, which is what made the old rose→gold version look messy).
      Deep enough to hold up against the tree's bright bloom behind it. */
@@ -384,60 +390,136 @@ body{
   transform-origin:8% 60%;             /* breathe from the start of the line */
 }
 .wish__rule{
-  display:block; width:clamp(46px, 13vw, 110px); height:2px;
-  margin:.12em 0 .48em;
+  display:block; width:clamp(46px, 11vw, 95px); height:2px;
+  margin:.1em 0 .38em;
   background:linear-gradient(90deg, var(--gold-2), rgba(232,162,61,0));
   box-shadow:0 0 8px rgba(255,247,240,.9);
   transform-origin:left center;
-}
-.wish__sub{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-weight:600; font-size:clamp(12px, 2.9vw, 20px);
-  letter-spacing:.03em; color:#6e3f4a;
-  text-shadow:0 1px 2px #fff8f1, 0 0 8px rgba(255,248,241,.98);
-}
-.wish__eyebrow, .wish__rule, .wish__sub{
-  opacity:0; transform:translateY(12px); filter:blur(5px);
+  opacity:0; transform:translateY(12px) scaleX(.3); filter:blur(5px);
   transition:opacity .8s ease, transform .9s var(--ease-out), filter .8s ease;
 }
-.wish__rule{ transform:translateY(12px) scaleX(.3); }
-.wish.is-in .wish__eyebrow,
-.wish.is-in .wish__sub{ opacity:1; transform:translateY(0); filter:blur(0); }
-.wish.is-in .wish__rule{ opacity:1; transform:translateY(0) scaleX(1); }
-.wish.is-in .wish__rule{ transition-delay:1.35s; }
-.wish.is-in .wish__sub{  transition-delay:1.55s; }
-/* New message & closing styling */
+.wish.is-in .wish__rule{
+  opacity:1; transform:translateY(0) scaleX(1); filter:blur(0);
+  transition-delay:1.45s;
+}
+
+/* Emotional birthday message paragraphs - revealed one line at a time */
 .wish__message{
-  margin-top:.6em;
+  margin-top:.45em;
+  max-width:520px;
 }
 .wish__message-line{
   font-family:"Cormorant Garamond", Georgia, serif;
-  font-weight:500; font-size:clamp(11px, 2.4vw, 17px);
-  line-height:1.65; color:#5c3342;
+  font-weight:500; font-size:clamp(12px, 1.9vw, 16.5px);
+  line-height:1.55; color:#5c3342;
   text-shadow:0 1px 2px #fff8f1, 0 0 8px rgba(255,248,241,.95);
-  margin:0 0 .35em;
+  margin:0 0 .3em;
   opacity:0; transform:translateY(12px); filter:blur(5px);
-  transition:opacity .8s ease, transform .9s var(--ease-out), filter .8s ease;
+  transition:opacity .85s ease, transform .95s var(--ease-out), filter .85s ease;
 }
-.wish.is-in .wish__message-line:nth-child(1){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:1.75s; }
-.wish.is-in .wish__message-line:nth-child(2){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:2.15s; }
-.wish.is-in .wish__message-line:nth-child(3){ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:2.55s; }
+.wish.is-in .wish__message-line:nth-child(1){
+  opacity:1; transform:translateY(0); filter:blur(0);
+  transition-delay:1.85s;
+}
+.wish.is-in .wish__message-line:nth-child(2){
+  opacity:1; transform:translateY(0); filter:blur(0);
+  transition-delay:2.75s;
+}
+.wish.is-in .wish__message-line:nth-child(3){
+  opacity:1; transform:translateY(0); filter:blur(0);
+  transition-delay:3.65s;
+}
+
+/* Final emotional ending: Happy Birthday, Pavi ma ❤️ with gentle glow and floating hearts */
+.wish__closingWrap{
+  position:relative;
+  display:inline-block;
+  margin-top:.45em;
+}
 .wish__closing{
   font-family:"Great Vibes", cursive; font-weight:400;
-  font-size:clamp(22px, 5vw, 42px);
-  margin-top:.6em;
+  font-size:clamp(22px, 4.6vw, 40px);
+  line-height:1.15; margin:0;
   background:linear-gradient(180deg, #e85a83 0%, #c41f52 50%, #9c0f42 100%);
   -webkit-background-clip:text; background-clip:text; color:transparent;
   filter:
     drop-shadow(0 1px 1px rgba(255,252,248,.98))
     drop-shadow(0 2px 6px rgba(130,18,55,.45));
   opacity:0; transform:translateY(12px); filter:blur(5px);
-  transition:opacity .8s ease, transform .9s var(--ease-out), filter .8s ease;
+  transition:opacity .9s ease, transform 1s var(--ease-out), filter .9s ease;
 }
-.wish.is-in .wish__closing{ opacity:1; transform:translateY(0); filter:blur(0); transition-delay:3s; }
+.wish.is-in .wish__closing{
+  opacity:1; transform:translateY(0); filter:blur(0);
+  transition-delay:4.6s;
+  animation:closingGlow 3.6s ease-in-out 5.5s infinite;
+}
+@keyframes closingGlow{
+  0%, 100%{
+    filter:
+      drop-shadow(0 1px 1px rgba(255,252,248,.98))
+      drop-shadow(0 2px 6px rgba(130,18,55,.45));
+  }
+  50%{
+    filter:
+      drop-shadow(0 1px 1px rgba(255,252,248,.98))
+      drop-shadow(0 3px 14px rgba(216,30,87,.75))
+      drop-shadow(0 0 18px rgba(255,180,200,.6));
+  }
+}
+
+/* Floating hearts around the ending */
+.wish__closing-heart{
+  position:absolute;
+  pointer-events:none;
+  opacity:0;
+  filter:drop-shadow(0 1px 4px rgba(216,30,87,.3));
+}
+.wish__closing-heart--1{
+  width:14px; height:13px;
+  fill:#ff5f86;
+  left:-14px; top:4px;
+}
+.wish__closing-heart--2{
+  width:12px; height:11px;
+  fill:#ffcf6a;
+  right:16px; top:-6px;
+}
+.wish__closing-heart--3{
+  width:15px; height:14px;
+  fill:#e85a83;
+  right:-16px; bottom:4px;
+}
+.wish.is-in .wish__closing-heart--1{
+  animation:floatHeart1 3.4s ease-in-out 4.9s infinite;
+}
+.wish.is-in .wish__closing-heart--2{
+  animation:floatHeart2 3.8s ease-in-out 5.2s infinite;
+}
+.wish.is-in .wish__closing-heart--3{
+  animation:floatHeart3 4.2s ease-in-out 5.5s infinite;
+}
+@keyframes floatHeart1{
+  0%{ opacity:0; transform:translate(0, 4px) scale(.6) rotate(-8deg); }
+  25%{ opacity:.85; }
+  75%{ opacity:.7; }
+  100%{ opacity:0; transform:translate(-6px, -18px) scale(1.05) rotate(12deg); }
+}
+@keyframes floatHeart2{
+  0%{ opacity:0; transform:translate(0, 4px) scale(.5) rotate(6deg); }
+  30%{ opacity:.9; }
+  70%{ opacity:.75; }
+  100%{ opacity:0; transform:translate(8px, -20px) scale(1) rotate(-10deg); }
+}
+@keyframes floatHeart3{
+  0%{ opacity:0; transform:translate(0, 3px) scale(.6) rotate(4deg); }
+  35%{ opacity:.85; }
+  75%{ opacity:.7; }
+  100%{ opacity:0; transform:translate(-4px, -22px) scale(1.1) rotate(14deg); }
+}
+
 .wish.is-in .wish__hero{
-  animation:write 1.2s cubic-bezier(.62,.04,.24,1) .35s forwards,
-            wishBreath 4s ease-in-out 1.9s infinite;
+  animation:write 1.25s cubic-bezier(.62,.04,.24,1) .45s forwards,
+            wishBreath 4s ease-in-out 2.0s infinite;
 }
 /* a gentle living breath — transform only, so it can never wash the fill out */
 @keyframes wishBreath{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.02); } }
@@ -488,9 +570,35 @@ body{
    ============================================================ */
 @media (max-width: 768px), (max-aspect-ratio: 1.1/1) {
   .wish{
-    left: 6%;
-    bottom: 5.5%;
-    max-width: 88%;
+    left: 5%;
+    right: 5%;
+    bottom: 3.5%;
+    max-width: 90%;
+  }
+  .wish__eyebrow{
+    font-size: clamp(11.5px, 3.2vw, 15px);
+  }
+  .wish__hero{
+    font-size: clamp(26px, 6.8vw, 42px);
+    line-height: 1.05;
+  }
+  .wish__rule{
+    width: clamp(36px, 11vw, 75px);
+    margin: .08em 0 .28em;
+  }
+  .wish__message{
+    margin-top: .28em;
+  }
+  .wish__message-line{
+    font-size: clamp(11px, 2.7vw, 13.5px);
+    line-height: 1.45;
+    margin-bottom: .22em;
+  }
+  .wish__closingWrap{
+    margin-top: .28em;
+  }
+  .wish__closing{
+    font-size: clamp(20px, 5.2vw, 30px);
   }
   .archery{
     width: clamp(110px, 28vw, 168px);
