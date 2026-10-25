@@ -26,46 +26,46 @@ export const memories = [
   {
     id: 2,
     title: "Memory 02",
-    tag: "Sweet Moments",
+    tag: "Playful Smiles",
     image: "./images/memory2.jpg",
-    caption: "Every little laugh and shared secret we cherish together",
-    date: "Pure Joy",
+    caption: "Every little laugh and silly face we share together",
+    date: "Pure Happiness",
     color: "#ffb4a2"
   },
   {
     id: 3,
     title: "Memory 03",
-    tag: "Starlight",
+    tag: "Timeless Us",
     image: "./images/memory3.jpg",
-    caption: "Adventures, quiet nights, and talks under starry skies",
-    date: "Endless Conversations",
+    caption: "Classic, beautiful, and forever etched in my heart",
+    date: "Captured Moments",
     color: "#e5989b"
   },
   {
     id: 4,
     title: "Memory 04",
-    tag: "Sunshine",
+    tag: "In Your Eyes",
     image: "./images/memory4.jpg",
-    caption: "Your gentle smile that makes everything brighter and warmer",
-    date: "My Favorite View",
+    caption: "Looking at you and knowing every moment together is a treasure",
+    date: "Under Open Skies",
     color: "#ffcbf2"
   },
   {
     id: 5,
     title: "Memory 05",
-    tag: "Warmth",
+    tag: "Floating Hearts",
     image: "./images/memory5.jpg",
-    caption: "Cozy coffee dates, comfortable silences, and holding hands",
-    date: "Simple Perfection",
+    caption: "Surrounded by little hearts, sweet smiles, and pure happiness",
+    date: "Cherished Moments",
     color: "#fec5bb"
   },
   {
     id: 6,
     title: "Memory 06",
-    tag: "Adventures",
+    tag: "Holding Hands",
     image: "./images/memory6.jpg",
-    caption: "The silly, spontaneous adventures that made our hearts race",
-    date: "Unforgettable Times",
+    caption: "Hand in hand, looking at you and knowing you're my favorite",
+    date: "Side by Side",
     color: "#fcd5ce"
   },
   {
