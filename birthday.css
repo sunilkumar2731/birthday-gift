@@ -535,7 +535,7 @@ body{
    REPLAY
    ============================================================ */
 .replay{
-  position:absolute; right:20px; bottom:18px; z-index:7;
+  position:absolute; right:24px; bottom:78px; z-index:7;
   display:inline-flex; align-items:center; gap:7px;
   padding:9px 15px 9px 12px; border-radius:999px;
   font:600 12.5px/1 "Cormorant Garamond", Georgia, serif; letter-spacing:.12em; text-transform:uppercase;
@@ -572,7 +572,7 @@ body{
   .wish{
     left: 5%;
     right: 5%;
-    bottom: 3.5%;
+    bottom: clamp(68px, 10.5vh, 90px);
     max-width: 90%;
   }
   .wish__eyebrow{
@@ -599,6 +599,12 @@ body{
   }
   .wish__closing{
     font-size: clamp(20px, 5.2vw, 30px);
+  }
+  .replay{
+    right: 14px;
+    bottom: 64px;
+    padding: 7px 12px;
+    font-size: 11px;
   }
   .archery{
     width: clamp(110px, 28vw, 168px);
