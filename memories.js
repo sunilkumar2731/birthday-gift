@@ -18,7 +18,7 @@ export const memories = [
     id: 1,
     title: "Memory 01",
     tag: "First Spark",
-    image: "/images/memory1.jpg",
+    image: "./images/memory1.jpg",
     caption: "The day our story began & smiles became unforgettable",
     date: "A Beautiful Beginning",
     color: "#ff8fa3"
@@ -27,7 +27,7 @@ export const memories = [
     id: 2,
     title: "Memory 02",
     tag: "Sweet Moments",
-    image: "/images/memory2.jpg",
+    image: "./images/memory2.jpg",
     caption: "Every little laugh and shared secret we cherish together",
     date: "Pure Joy",
     color: "#ffb4a2"
@@ -36,7 +36,7 @@ export const memories = [
     id: 3,
     title: "Memory 03",
     tag: "Starlight",
-    image: "/images/memory3.jpg",
+    image: "./images/memory3.jpg",
     caption: "Adventures, quiet nights, and talks under starry skies",
     date: "Endless Conversations",
     color: "#e5989b"
@@ -45,7 +45,7 @@ export const memories = [
     id: 4,
     title: "Memory 04",
     tag: "Sunshine",
-    image: "/images/memory4.jpg",
+    image: "./images/memory4.jpg",
     caption: "Your gentle smile that makes everything brighter and warmer",
     date: "My Favorite View",
     color: "#ffcbf2"
@@ -54,7 +54,7 @@ export const memories = [
     id: 5,
     title: "Memory 05",
     tag: "Warmth",
-    image: "/images/memory5.jpg",
+    image: "./images/memory5.jpg",
     caption: "Cozy coffee dates, comfortable silences, and holding hands",
     date: "Simple Perfection",
     color: "#fec5bb"
@@ -63,7 +63,7 @@ export const memories = [
     id: 6,
     title: "Memory 06",
     tag: "Adventures",
-    image: "/images/memory6.jpg",
+    image: "./images/memory6.jpg",
     caption: "The silly, spontaneous adventures that made our hearts race",
     date: "Unforgettable Times",
     color: "#fcd5ce"
@@ -72,7 +72,7 @@ export const memories = [
     id: 7,
     title: "Memory 07",
     tag: "Growing Closer",
-    image: "/images/memory7.jpg",
+    image: "./images/memory7.jpg",
     caption: "Every day learning more about the beautiful person you are",
     date: "Side by Side",
     color: "#e8aeec"
@@ -81,7 +81,7 @@ export const memories = [
     id: 8,
     title: "Memory 08",
     tag: "Forever & Always",
-    image: "/images/memory8.jpg",
+    image: "./images/memory8.jpg",
     caption: "Here's to a lifetime of celebrating you, every single year",
     date: "Happy Birthday",
     color: "#f4a261"
