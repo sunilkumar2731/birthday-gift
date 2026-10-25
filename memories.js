@@ -570,22 +570,6 @@ function setupEventListeners() {
       }
     }
   });
-
-  // Scroll back to tree button
-  const backBtn = document.getElementById('btnBackToTree');
-  backBtn?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Final replay full journey button
-  const finalReplayBtn = document.getElementById('btnFinalReplay');
-  finalReplayBtn?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      const replayBtn = document.getElementById('replay');
-      if (replayBtn) replayBtn.click();
-    }, 600);
-  });
 }
 
 /**

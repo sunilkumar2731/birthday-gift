@@ -883,6 +883,7 @@ function enter(){
 }
 
 function armReplay(){
+  if (!replay) return;
   replay.hidden = false;
   requestAnimationFrame(() => replay.classList.add('is-shown'));
 }
@@ -892,7 +893,7 @@ function resetAll(){
   treeStop();
   showWish(false);
   window.bdayDone = false; replayArmed = false;
-  replay.classList.remove('is-shown'); replay.hidden = true;
+  if (replay){ replay.classList.remove('is-shown'); replay.hidden = true; }
   if (filmTL){ filmTL.pause(0); }
   gsap.set([flood, bloom], { autoAlpha: 0 });
   gsap.set(field, { autoAlpha: 0 });
@@ -933,7 +934,23 @@ buildMotes();
 document.fonts && document.fonts.ready.then(() => { refreshRig(); setDraw(0); });
 enter();
 initMemoriesSection();
-replay.addEventListener('click', resetAll);
+replay?.addEventListener('click', resetAll);
+
+/* Remove any Netlify badge injected into the DOM */
+function removeNetlifyBadge() {
+  document.querySelectorAll('a[href*="netlify.com"], .netlify-badge, #netlify-badge, [data-netlify-badge], img[alt*="Netlify"]').forEach((el) => {
+    const parent = el.closest('div, a');
+    if (parent && parent !== document.body && parent !== document.documentElement) {
+      parent.remove();
+    } else {
+      el.remove();
+    }
+  });
+}
+removeNetlifyBadge();
+if (typeof MutationObserver !== 'undefined') {
+  new MutationObserver(removeNetlifyBadge).observe(document.documentElement, { childList: true, subtree: true });
+}
 
 /* ============================================================
    RECORDING HOOK — the rig draws + fires after its pre-roll

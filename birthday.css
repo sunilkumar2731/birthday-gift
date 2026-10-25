@@ -532,23 +532,30 @@ body{
 @keyframes twk{ 0%,100%{ opacity:0; transform:scale(.5) rotate(-12deg); } 45%{ opacity:1; transform:scale(1.05) rotate(16deg); } }
 
 /* ============================================================
-   REPLAY
+   HIDE NETLIFY BADGE
    ============================================================ */
-.replay{
-  position:absolute; right:24px; bottom:78px; z-index:7;
-  display:inline-flex; align-items:center; gap:7px;
-  padding:9px 15px 9px 12px; border-radius:999px;
-  font:600 12.5px/1 "Cormorant Garamond", Georgia, serif; letter-spacing:.12em; text-transform:uppercase;
-  color:#8a4a5a; background:rgba(255,248,242,.72);
-  border:1px solid rgba(150,60,80,.18);
-  box-shadow:0 6px 20px -8px rgba(120,20,50,.4);
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-  cursor:pointer; opacity:0; transform:translateY(8px);
-  transition:opacity .5s ease, transform .5s var(--ease-out), background .3s ease;
+.netlify-badge,
+#netlify-badge,
+[data-netlify-badge],
+a[href*="netlify.com"],
+div[class*="netlify-badge"],
+iframe[src*="netlify"],
+img[src*="netlify-color"],
+img[src*="netlify-dark"],
+img[alt*="Deploys by Netlify"],
+img[alt*="Powered by Netlify"],
+.netlify-badge-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
 }
-.replay.is-shown{ opacity:1; transform:translateY(0); }
-.replay:hover{ background:rgba(255,252,248,.92); }
-.replay svg{ opacity:.8; }
 
 /* ============================================================
    THE LENS — grain + vignette over every act
@@ -599,12 +606,6 @@ body{
   }
   .wish__closing{
     font-size: clamp(20px, 5.2vw, 30px);
-  }
-  .replay{
-    right: 14px;
-    bottom: 64px;
-    padding: 7px 12px;
-    font-size: 11px;
   }
   .archery{
     width: clamp(110px, 28vw, 168px);
