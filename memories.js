@@ -198,6 +198,7 @@ export function initMemoriesSection() {
   initLightbox();
   initPetalRain();
   setupEventListeners();
+  triggerRevealAnimations();
 
   // Expose global hooks for birthday.js
   window.showMemoriesPrompt = showTransitionPrompt;
