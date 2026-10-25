@@ -71,10 +71,10 @@ export const memories = [
   {
     id: 7,
     title: "Memory 07",
-    tag: "Growing Closer",
+    tag: "Brightest Smiles",
     image: "./images/memory7.jpg",
-    caption: "Every day learning more about the beautiful person you are",
-    date: "Side by Side",
+    caption: "Your smile makes every ordinary day feel extraordinary and bright",
+    date: "Sunshine & Joy",
     color: "#e8aeec"
   },
   {
@@ -82,7 +82,7 @@ export const memories = [
     title: "Memory 08",
     tag: "Forever & Always",
     image: "./images/memory8.jpg",
-    caption: "Here's to a lifetime of celebrating you, every single year",
+    caption: "With my arm around you, celebrating you today and every day after",
     date: "Happy Birthday",
     color: "#f4a261"
   }
